@@ -20,7 +20,7 @@ while play=="y" or play=="Y":
             print("Sorry, Try again.")
             help = input("Do you need help?")
             if help == "y" or help == "Y":
-                points=int(points)-50
+                points=int(points)-10
                 if correct=="champion":
                     print("you won a final football match. You are..........")
                 elif correct=="meticulous":

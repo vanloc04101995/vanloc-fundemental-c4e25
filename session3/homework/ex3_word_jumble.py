@@ -8,7 +8,7 @@ while play=="y" or play=="Y":
     word = random.choice(WORDS)
     correct = word
     jumble =""
-    while word:
+    while word: # trong khi word vẫn còn kí tự thì n vẫn là true, đến khi n Null là False
         position = random.randrange(len(word))
         jumble += word[position]
         word = word[:position] + word[(position + 1):]
