@@ -7,4 +7,5 @@ for letter in sentence:
 # print(letter_counts) # dict
 letter_items = list(letter_counts.items())
 letter_items.sort()
-print(letter_items)
+for char,count in letter_items:
+      print(char,count)
