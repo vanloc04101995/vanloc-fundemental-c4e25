@@ -1,41 +1,17 @@
-import random
-# create a sequence of words to choose from
-WORDS = ("champion", "meticulous", "hexagon", "difficult")
-print(" Welcome to Word Jumble!")
-play=input("Do you want to play? (Y or N)")
-while play=="y" or play=="Y":
-    # a random word
-    word = random.choice(WORDS)
-    correct = word
-    list_word = list(word)
-    # shuffle the word
-    random.shuffle(list_word)
-    print("What is the word?")
-    for (i,val) in enumerate(list_word):
-        print(val, end="")
-    print()
-    guess = input("Your answer:")
-    points = 100
-    while guess != correct and guess != "":
-            print("Sorry, Try again.")
-            help = input("Do you need help?")
-            if help == "y" or help == "Y":
-                points=int(points)-50
-                if correct=="champion":
-                    print("you won a final football match. You are..........")
-                elif correct=="meticulous":
-                    print("A word that shows great attention to detail")
-                elif correct== "hexagon":
-                    print("A figure with six straight sides and angles")
-                elif correct=="difficult":
-                    print("You don't know the answer. It is very..........")
-            guess = input("Your guess: ")
-    if guess == correct:
-            print("Correct! You guessed it!\n")
-            print("Your score is: "+str(points))
-            play=input("Do you want to play again? (Y or N)")
-    elif guess== "":
-            print("You failed...")
-            play=input("Do you want to play again? (yes or no)")
+import time
 
-print("Thanks for playing.")
+def do_my_sum(xs):
+    sum = 0
+    for v in xs:
+        sum += v
+    return sum
+sz = 10000000 # Lets have 10 million elements in the list
+testdata = range(sz)
+t0 = time.process_time()
+my_result = do_my_sum(testdata)
+t1 = time.process_time()
+print("my_result = {0} (time taken = {1:.4f} seconds)".format(my_result, t1-t0))
+t2 = time.process_time()
+their_result = sum(testdata)
+t3 = time.process_time()
+print("their_result = {0} (time taken = {1:.4f} seconds)".format(their_result, t3-t2))
